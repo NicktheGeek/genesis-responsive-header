@@ -3,7 +3,7 @@
  * Adds the required CSS and JS to the front end.
  */
  
-
+add_action( 'wp_head', 'grh_css' );
 /**
 * Checks the settings for the images and background colors for each size
 * If any of these value are set the appropriate CSS is output
@@ -21,9 +21,9 @@ function grh_css() {
 	$settings = array();
 	
 	foreach( $opts as $opt ){
-		$settings[$opt]['image'] = grh_get_option($opt .'-image');
-		$settings[$opt]['height'] = grh_get_option($opt .'-image_height');
-		$settings[$opt]['color'] = str_replace( '#', '', grh_get_option($opt .'-color') );
+		$settings[$opt]['image']  = get_option( $opt .'-image' );
+		$settings[$opt]['height'] = get_option( $opt .'-image-height' );
+		$settings[$opt]['color']  = str_replace( '#', '', get_option( $opt .'-color' ) );
 	}
 	
 	if( grh_is_multi_array_empty( $settings) ) 
@@ -39,9 +39,9 @@ function grh_css() {
 			$color = $value['color'] ? sprintf( 'background-color:#%s !important;', $value['color'] ) : '';
 			$background = $value['image'] ? sprintf( 'background:url(%s)no-repeat center !important;background-size:contain!important;width:100%%!important;', $value['image'] ) : '';
 			//$image_size = $value['image'] ? @getimagesize($value['image']) : '';
-			$height = $value['height'] ? sprintf( 'height:%spx!important;', $value['height'] ) : ''; 
+			$height = $value['height']? sprintf( 'height:%spx!important;', $value['height'] ) : ''; 
 			
-			printf( '@media only screen and (max-width: %spx){ #header{ background-image:none!important; %s height:auto!important;min-height:0!important;width:100%%; } #title-area{ %s%s } }', $size+15, $color, $background, $height );
+			printf( '@media only screen and (max-width: %spx){ #header{ background-image:none!important; %s height:auto!important;min-height:0!important;width:100%%; } #title-area{ %s%s } #title, #title a { background: none !important; } }', $size, $color, $background, $height );
 			
 		}
 		
@@ -49,8 +49,6 @@ function grh_css() {
 	
 	
 }
-add_action( 'wp_head', 'grh_css' );
-
 
 /**
 * Checks to see if each part of a multidimensional array is empy
@@ -77,7 +75,7 @@ function grh_is_multi_array_empty($multiarray) {
 * @since 0.1
 */
 function grh_enqueue_scripts() {
-	if( ! grh_get_option( 'disable-script' ) )
+	if( ! get_option( 'grh_disable_script' ) )
 		wp_enqueue_script( 'grh-header-height', plugins_url( '/genesis-responsive-header/js/resize-header.js' , GRH_PLUGIN_DIR ), array('jquery'), '0.1', true );
 }
 add_action('wp_enqueue_scripts', 'grh_enqueue_scripts');
