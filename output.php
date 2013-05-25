@@ -16,12 +16,7 @@
 */
 function grh_css() {
 	
-	$opts = array( 
-		'768',
-		'480',
-		'320',
-		'240',
-	);
+	$opts = apply_filters( 'grh_media_sizes', array( '768', '480', '320', '240' ) );
 	
 	$settings = array();
 	

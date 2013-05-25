@@ -10,6 +10,25 @@ function grh_admin_settings( $admin_pages ) {
     
     $prefix = 'genesis_comment_form_args_'; // start with an underscore to hide fields from custom fields list
     
+    $widths = apply_filters( 'grh_media_sizes', array( '768', '480', '320', '240' ) );
+    
+    $fields = array();
+    
+    foreach( $widths as $width ){
+	    $fields[] = array(
+                        'name' => sprintf( __("%spx  Logo Image:", 'grh'), $width ),
+                        'desc' => '',
+                        'id'   => $width . '-image',
+                        'type' => 'file'
+                    );
+        $fields[] = array(
+                        'name' => sprintf( __("%spx Header Background Color:", 'grh'), $width ),
+                        'desc' => '',
+                        'id'   => $width .'-color',
+                        'type' => 'colorpicker'
+                    );
+    }
+    
     
 	$admin_pages[] = array(
             'settings' => array(
@@ -43,67 +62,9 @@ function grh_admin_settings( $admin_pages ) {
                 'context'    => 'main',
                 'priority'   => 'high',/**/
                 'show_names' => true, // Show field names on the left
-                'fields'     => array(
-                    
-                    array(
-                        'name' => sprintf( __("%s  Logo Image:", 'grh'), '768px' ),
-                        'desc' => '',
-                        'id'   => '768-image',
-                        'type' => 'file'
-                    ),
-                    array(
-                        'name' => sprintf( __("%s Header Background Color:", 'grh'), '768px' ),
-                        'desc' => '',
-                        'id'   => '768-color',
-                        'type' => 'colorpicker'
-                    ),
-
-                    array(
-                        'name' => sprintf( __("%s Logo Image:", 'grh'), '480px' ),
-                        'desc' => '',
-                        'id'   => '480-image',
-                        'type' => 'file'
-                    ),
-                    array(
-                        'name' => sprintf( __("%s Header Background Color:", 'grh'), '480px' ),
-                        'desc' => '',
-                        'id'   => '480-color',
-                        'type' => 'colorpicker'
-                    ),
-                    
-                    array(
-                        'name' => sprintf( __("%s Logo Image:", 'grh'), '320px' ),
-                        'desc' => '',
-                        'id'   => '320-image',
-                        'type' => 'file'
-                    ),
-                    array(
-                        'name' => sprintf( __("%s Header Background Color:", 'grh'), '320px' ),
-                        'desc' => '',
-                        'id'   => '320-color',
-                        'type' => 'colorpicker'
-                    ),
-                    
-                    array(
-                        'name' => sprintf( __("%s Logo Image:", 'grh'), '240px' ),
-                        'desc' => '',
-                        'id'   => '240-image',
-                        'type' => 'file'
-                    ),
-                    array(
-                        'name' => sprintf( __("%s Header Background Color:", 'grh'), '240px' ),
-                        'desc' => '',
-                        'id'   => '240-color',
-                        'type' => 'colorpicker'
-                    ),
-                    array(
-                        'name' => __("Disable Javascript?:", 'grh'),
-                        'desc' => 'The Javascript allows the logo height to size correctly between resolutions and should be enabled unless it conflicts with other scripts.',
-                        'id'   => 'disable-script',
-                        'type' => 'checkbox'
-                    ),
-                    
-                ))
+                'fields'     => $fields
+                
+                )
 	);
 	
 	return $admin_pages;
