@@ -7,6 +7,8 @@
   Author: Nick_theGeek
   Author URI: http://DesignsByNicktheGeek.com
   Description: Allows user to add custom header images for 768px, 480px, 320px, and 240px wide browsers. Requires Genesis 1.8+
+  Text Domain: grh
+  Domain Path: /languages/
  */
 
 /*

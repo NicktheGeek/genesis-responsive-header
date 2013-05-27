@@ -1,0 +1,123 @@
+# This German Language File: Copyright (C) 2013 by David Decker of deckerweb.de & genesisthemes.de
+# This file is distributed under the same license as the Genesis Responsive Header Plugin package.
+#
+# Weitere deutsche Sprachdateien fuer Genesis Framework, Genesis Child Themes und Genesis Plugins
+# sowie WordPress Plugins und Themes sind hier zu finden:
+# --> http://deckerweb.de/sprachdateien/
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Genesis Responsive Header v0.9\n"
+"Report-Msgid-Bugs-To: http://deckerweb.de/kontakt/\n"
+"POT-Creation-Date: 2013-05-27 08:56:46+0000\n"
+"PO-Revision-Date: 2013-05-27 11:16+0100\n"
+"Last-Translator: David Decker <deckerweb.mobil@googlemail.com>\n"
+"Language-Team: DECKERWEB -- http://deckerweb.de/kontakt/\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: de_DE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ grh
+#: admin.php:11
+msgid "Responsive Header"
+msgstr "Responsive Kopfzeile"
+
+# @ grh
+#: admin.php:22
+msgid "Update Image Sizes"
+msgstr "Bildgrößen aktualisieren"
+
+# @ grh
+#: admin.php:34
+msgid "Show Height Option Field"
+msgstr "Bildhöhe-Optionsfeld anzeigen"
+
+# @ grh
+#: admin.php:46
+msgid "Disable Scripts"
+msgstr "Scripte deaktivieren"
+
+# @ grh
+#: admin.php:64
+#, php-format
+msgid "%spx  Logo Image:"
+msgstr "%spx Logo-Bild:"
+
+# @ grh
+#: admin.php:71
+#, php-format
+msgid "%spx Header Background Color:"
+msgstr "%spx Kopfzeile Hintergrundfarbe:"
+
+# @ grh
+#: admin.php:85
+#, php-format
+msgid "%spx Image Height:"
+msgstr "%spx Bildhöhe:"
+
+# @ grh
+#. translators: plugin header field 'Name'
+#: plugin.php:0
+msgid "Genesis Responsive Header"
+msgstr "Genesis Responsive Kopfzeile"
+
+# @ grh
+#. translators: plugin header field 'PluginURI'
+#. translators: plugin header field 'AuthorURI'
+#: plugin.php:0
+msgid "http://DesignsByNicktheGeek.com"
+msgstr "http://DesignsByNicktheGeek.com/"
+
+# @ grh
+#. translators: plugin header field 'Description'
+#: plugin.php:0
+msgid ""
+"Allows user to add custom header images for 768px, 480px, 320px, and 240px "
+"wide browsers. Requires Genesis 1.8+"
+msgstr ""
+"Ermöglicht es, benutzerdefinierte Kopfzeilenbilder für Displaygrößen von "
+"768px, 480px, 320px sowie 240px anzulegen. Das Plugin erfordert das Genesis "
+"Framework ab Version 1.8.0 oder höher."
+
+# @ grh
+#. translators: plugin header field 'Author'
+#: plugin.php:0
+msgid "Nick_theGeek"
+msgstr "Nick_theGeek"
+
+# @ grh
+#. translators: plugin header field 'Version'
+#: plugin.php:0
+msgid "0.9"
+msgstr "0.9"
+
+# @ grh
+#: plugin.php:21
+msgid "Sorry, you are not allowed to access this page directly."
+msgstr ""
+"Entschuldigung, aber Sie können auf diese Seite nicht direkt zugreifen."
+
+# @ grh
+#: plugin.php:53
+#, php-format
+msgid "Sorry, you can't activate unless you have installed %1$sGenesis%2$s"
+msgstr ""
+"Hinweis: Um dieses Plugin aktivieren zu können, müssen Sie zuerst das "
+"%1$sGenesis Framework%2$s installiert haben."
+
+# @ grh
+#: plugin.php:60
+#, php-format
+msgid "Sorry, you can't activate without %1$sGenesis %2$s%3$s or greater"
+msgstr ""
+"Hinweis: Sie können das Plugin nur aktivieren, wenn Sie das %1$sGenesis "
+"Framework %2$s%3$s oder höher installiert haben."
