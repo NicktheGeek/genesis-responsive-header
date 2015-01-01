@@ -20,16 +20,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 define( 'GRH_PLUGIN_DIR', dirname( __FILE__ ) );
-define( 'GRH_SETTINGS_FIELD', 'grh-settings' );
-
-
-/**
- * This registers the settings field
- */
-function register_grh_settings() {
-	register_setting(GRH_SETTINGS_FIELD, GRH_SETTINGS_FIELD);
-	add_action('admin_init', 'register_grh_settings');
-}
+define( 'GRH_SETTINGS_FIELD', 'grh-customizer-options' );
 
 register_activation_hook( __FILE__, 'grh_activation_check' );
 /**
@@ -88,10 +79,12 @@ function grh_init() {
     /** Load textdomain for translation */
     load_plugin_textdomain( 'grh', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 
-    if ( is_admin ( ) )
-        require_once(GRH_PLUGIN_DIR . '/admin.php');
-    else
-        require_once(GRH_PLUGIN_DIR . '/output.php');
+	if( is_customize_preview() ) {
+    	require_once(GRH_PLUGIN_DIR . '/admin.php');
+    }
+    if( ! is_admin() || is_customize_preview() ) {
+    	require_once(GRH_PLUGIN_DIR . '/output.php');
+    }
 
             
 }
