@@ -75,7 +75,7 @@ function grh_is_multi_array_empty($multiarray) {
 * @since 0.1
 */
 function grh_enqueue_scripts() {
-	if( ! get_option( 'grh_disable_script' ) )
-		wp_enqueue_script( 'grh-header-height', plugins_url( '/genesis-responsive-header/js/resize-header.js' , GRH_PLUGIN_DIR ), array('jquery'), '0.1', true );
+	if( ! get_option( 'grh_disable_script' ) ) 
+		wp_enqueue_script( 'grh-header-height', plugins_url('/js/resize-header.js', __FILE__), array('jquery'), '0.1', true );
 }
 add_action('wp_enqueue_scripts', 'grh_enqueue_scripts');
