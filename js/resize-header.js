@@ -8,7 +8,7 @@
 function grhHeaderAutoHeight()
 {
     var headerImage = new Image(),
-        imageSource = jQuery('#title-area').css('background-image').replace(/"/g,"").replace(/url\(|\)$/ig, "");
+        imageSource = jQuery('.title-area').css('background-image').replace(/"/g,"").replace(/url\(|\)$/ig, "");
 
     // Make sure we're not trying to load any empty image source
     // This will prevent calls to /none 
@@ -16,14 +16,14 @@ function grhHeaderAutoHeight()
         headerImage.src = imageSource;
         if(headerImage) {
             var width = headerImage.width,
-                currentWidth = jQuery( '#title-area' ).width(),
+                currentWidth = jQuery( '.title-area' ).width(),
                 ratio = currentWidth/width,
                 height = headerImage.height*ratio,
                 body = jQuery( 'body' ).width();
 
             if( body < 768 ){
                 if( ratio < 1 ){
-                    jQuery( '#title-area' ).attr( 'style', 'height: '.concat( height, 'px !important' ) );
+                    jQuery( '.title-area' ).attr( 'style', 'height: '.concat( height, 'px !important' ) );
                 }
             }
         }
